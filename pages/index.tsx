@@ -1,21 +1,13 @@
 import type { NextPage, NextPageContext } from "next";
 
-import { getSession, signOut } from "next-auth/react";
+import { getSession } from "next-auth/react";
 
-import useCurrentUser from "../hooks/useCurrentUser";
+import Navbar from "../components/Navbar";
 
 const Home: NextPage = () => {
-  const { data: user } = useCurrentUser();
   return (
     <>
-      <h1 className="text-2xl text-orange-400">Netflix Clone</h1>
-      <p className="text-orange-400">Username: {user?.email}</p>
-      <button
-        onClick={() => signOut()}
-        className="bg-white w-full h-10 rounded-md"
-      >
-        Logout
-      </button>
+      <Navbar />
     </>
   );
 };
